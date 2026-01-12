@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV-erp format</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+
+<body>
+    <div class="main">
+        <div>
+            <div class="flex buttoncont">
+                <button class="button2" onclick="toedit()">Edit</button>
+                <button class="button2" onclick="saveCheckpoint()">saveCheckpoint</button>
+                <button class="button2" onclick="restoreCheckpoint()">restoreCheckpoint</button>
+                <button class="button2" onclick="downloadPDF()">Download PDF</button>
+                <button class="button2" onclick="downloadHighPDF()">Download High quality PDF</button>
+            </div>
+            <div class="flex">
+                <div class="toolbar">
+                    <button class="button" onclick="format('bold')"><b>B</b></button>
+                    <button class="button" onclick="format('italic')"><b>I</b></button>
+                    <button class="button" onclick="format('underline')"><b>U</b></button>
+                    <button class="button" onclick="addLink()">Text to link</button>
+                </div>
+            </div>
+        </div>
+        <div id="cv-page" class="page">
+            <div class="maincontent">
+
+                <div class="header margin">
+                    <div class="left">
+                        <div class="imgcont flex">
+                            <img src="images/kgp-logo.png" alt="logo">
+                        </div>
+                    </div>
+                    <div class="mid flex">
+                        <div class="headtext">
+                            <span class="candiname editable">YOUR NAME | 24XX10069</span>
+                            <span class="collegename">Indian Institute of Technology Kharagpur</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="imgcont flex">
+                            <img src="images/candidate.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="box margin">
+                    <div>
+                        <div class="cover"></div>
+                        <div class="font1 flex heading">EDUCATION</div>
+                        <div class="cover"></div>
+                    </div>
+                    <div class="contentbox education-box">
+                        <table>
+                            <tr>
+                                <th class="font2">Year</th>
+                                <th class="font2">Degree/Exam</th>
+                                <th class="font2">Institute</th>
+                                <th class="font2">CGPA/Marks</th>
+                            </tr>
+                            <tr>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                            </tr>
+                            <tr>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                            </tr>
+                            <tr>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                                <td class="editable font3">enter</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+
+                <div class="box margin">
+                    <div>
+                        <div>
+                            <div class="cover"></div>
+                            <div class="font1 flex heading">WORK EXPERIENCES</div>
+                            <div class="cover"></div>
+                        </div>
+                    </div>
+                    <div class="contentbox add-new-topic">
+                        <div class="html-append">
+                            <div class="topic">
+                                <span class="font2 editable">Enter your topic</span>
+                                <span class="font2  editable">date e.g Jun 2022 - Jul2022</span>
+                            </div>
+                            <div class="relative">
+                                <ul class="lists">
+                                    <li class="editable font3">Enter the points</li>
+                                    <li class="editable font3">describe the topic</li>
+                                    <li class="editable font3"> do so just by tapping on it
+                                        <a href="https://github.com/yourrepo" target="_blank">
+                                            Repo is here
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="addtopic(this)" class="button visibility">add new topic</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="box margin">
+                    <div>
+                        <div class="cover"></div>
+                        <div class="font1 flex heading">INTERSHIPS AND PROJECTS</div>
+                        <div class="cover"></div>
+                    </div>
+                    <div class="contentbox add-new-topic">
+                        <div class="html-append">
+                            <div class="topic">
+                                <span class="font2 editable">Enter your topic</span>
+                                <span class="font2 editable">date e.g Jun 2022 - Jul2022</span>
+                            </div>
+                            <div class="relative">
+                                <ul class="lists">
+                                    <li class="editable font3">Enter the points</li>
+                                    <li class="editable font3">describe the topic</li>
+                                    <li class="editable font3"> do so just by tapping on it </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="addtopic(this)" class="button visibility">add new topic</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box margin">
+                    <div>
+                        <div class="cover"></div>
+                        <div class="font1 flex heading">AWARDS AND ACHIEVEMENTS</div>
+                        <div class="cover"></div>
+                    </div>
+                    <div class="contentbox">
+                        <div class="relative">
+                            <ul class="lists">
+                                <li class="editable font3">Enter the points</li>
+                                <li class="editable font3">describe the topic</li>
+                                <li class="editable font3"> do so just by tapping on it </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box margin">
+                    <div>
+                        <div class="cover"></div>
+                        <div class="font1 flex heading">SKILLS AND EXPERTISE</div>
+                        <div class="cover"></div>
+                    </div>
+                    <div class="contentbox">
+                        <div class="relative">
+                            <ul class="lists skills">
+                                <li>
+                                    <span class="font2">Programming Languages: </span>
+                                    <span class="editable font3" contenteditable="true">C++ | Python | C | Java script |
+                                        Java</span>
+                                </li>
+                                <li>
+                                    <span class="font2">Libraries/Frameworks: </span>
+                                    <span class="editable font3" contenteditable="true">&nbsp;Numpy, Pandas,
+                                        Matplotlib,</span>
+                                </li>
+                                <li>
+                                    <span class="font2">Software/Tools: </span>
+                                    <span class="editable font3" contenteditable="true">&nbsp;Jupitor Notebook,&nbsp;
+                                        Arduino IDE, Solidworks,&nbsp; Autocad, Kali Linux</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box margin">
+                    <div>
+                        <div class="cover"></div>
+                        <div class="font1 flex heading">COURSEWORK INFORMATION</div>
+                        <div class="cover"></div>
+                    </div>
+                    <div class="contentbox">
+                        <div class="relative">
+                            <ul class="lists courseworkgrid">
+                                <li class="editable font3">Enter the points</li>
+                                <li class="editable font3">describe the topic</li>
+                                <li class="editable font3"> do so just by tapping on it </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box margin">
+                    <div>
+                        <div class="cover"></div>
+                        <div class="font1 flex heading">POSITIONS OF RESPONSIBILITY</div>
+                        <div class="cover"></div>
+                    </div>
+                    <div class="contentbox add-new-topic">
+                        <div class="html-append">
+                            <div class="topic">
+                                <span class="font2 editable">Enter your topic</span>
+                                <span class="font2 editable">date e.g Jun 2022 - Jul2022</span>
+                            </div>
+                            <div class="relative">
+                                <ul class="lists">
+                                    <li class="editable font3">Enter the points</li>
+                                    <li class="editable font3">describe the topic</li>
+                                    <li class="editable font3"> do so just by tapping on it </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="addtopic(this)" class="button visibility">add new topic</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="box margin">
+                    <div>
+                        <div class="cover"></div>
+                        <div class="font1 flex heading">EXTRA CURRCULAR ACTIVITIES</div>
+                        <div class="cover"></div>
+                    </div>
+                    <div class="contentbox">
+                        <div class="relative">
+                            <ul class="lists skills">
+                                <li class="editable font3">tap to write</li>
+                                <li class="editable font3">tap to edit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="end">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

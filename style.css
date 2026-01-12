@@ -1,0 +1,261 @@
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.relative{
+    position: relative;
+}
+.border{
+    border: 2px solid black;
+}
+.margin{
+    margin: 5px 0px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+.font1{
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    word-spacing: 0.02em;
+}
+.font2{
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    word-spacing: 0.02em;
+}
+.font3{
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: -0.03em;
+    word-spacing: -0.03em;
+    line-height: 16px;
+}
+
+
+.main{
+    width: 100%;
+}
+
+.page {
+    width: 794px;
+    height: 1123px;
+    margin: auto;
+    background: rgb(255, 255, 255);
+}
+.maincontent{
+    width: 98%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left{
+    width: 120px;
+}
+.left .imgcont{
+    height: 90px;
+    width: 90px;
+
+}
+.left img{
+    width: 250%;
+    height: 120%;
+    object-fit: contain;
+}
+.right{
+    width: 90px;
+    height: auto;
+}
+.right img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.headtext{
+    display: flex;
+    flex-direction: column;
+}
+.candiname{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
+.collegename{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
+.box .cover{
+    width: 100%;
+    height: 2px;
+    background-color:#C5C7CB;
+}
+.contentbox{
+    padding: 0 3px;
+}
+
+.button{
+    background-color: rgb(120, 169, 169);
+    padding: 2px 4px;
+    margin: 0 5px;
+    border-radius: 3px;
+}
+.button2{
+    background-color: rgb(203, 210, 192);
+    padding: 6px 8px;
+    margin: 8px 5px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 12px;
+}
+.button2:hover{
+    background-color: rgb(161, 161, 161);
+}
+.buttoncont{
+    background-color: #1f2937;
+    justify-content: center;
+}
+
+
+.toolbar {
+  gap: 6px;
+  padding: 6px 8px;
+  margin: 5px 0px;
+  background: #2e3c50;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 1000;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+}
+
+.toolbar button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.toolbar button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+
+
+
+
+
+.heading{
+    background-color: #E1E9F0;
+}
+.education-box{
+    display: grid;
+    position: relative;
+    
+}
+
+.contentbox th{
+    text-align: left;
+}
+
+.topic{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+
+.lists{
+    position: relative;
+    left: 20px;
+}
+
+.end{
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+.editable{
+    outline: none;
+    cursor: text;
+}
+.editable:focus{
+    background-color: #e0e0e0;
+}
+
+/* .add-new-topic-button:focus{
+    visibility: visible;
+} */
+
+.visibility{
+    display: none;
+}
+
+.courseworkgrid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+@media print {
+
+  /* Reset browser defaults */
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  /* A4 page size */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  /* Page container */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 32px;
+    border: none;
+    box-shadow: none;
+    background: white !important;
+  }
+
+  /* Hide UI elements */
+  .button, .button2 { 
+    display: none;
+  }
+
+  /* Prevent page breaks inside sections */
+  .header,
+  .edu,
+  .maincontent {
+    page-break-inside: avoid;
+  }
+}
